@@ -13,7 +13,7 @@ w = b*q/m
 r = e/(b*w)
 
 #load image
-PathToRealImage = "a.jpeg"
+PathToRealImage = "PathToRealImage" #need to be change
 RealImage= Image.open(PathToRealImage)
 pixelmap = RealImage.load()
 img = Image.new( RealImage.mode, RealImage.size)
@@ -41,7 +41,7 @@ while(-math.pi*2/(w)> t):
 #set sqre in point
 
 def block(x, y):
-    r = 5
+    r = 5 #optinal
     try:
         for i in range(r):
             for j in range(r):
@@ -63,12 +63,10 @@ def SeeDeff():
             newPixelMap[w,h] = pixelmap[w,h]
     print("Finsh load")
     for p in range(len(PointOfX)):
-        #print(int(-hImage*PointOfY[p]/(r*2)))
-        #print(int(-wImage*PointOfX[p]/(2*math.pi*r)))
-        #sleep(0.00005)
         block( int(hImage*PointOfY[p]/(r*2)) ,int(-wImage*PointOfX[p]/(2*math.pi*r)))
     print("Finsh edit")
 SeeDeff()
+
 #To see and save the diff
 img.save("DiffRelute.jpeg") 
 RealImage.close()
